@@ -17,6 +17,13 @@ public class Main {
             }
         }
 
-
+        File f2 = new File("ccc.dll");
+        try (InputStream is = new BufferedInputStream(new FileInputStream(f2));
+             OutputStream os = new BufferedOutputStream(new FileOutputStream(new File("c:\\install\\ddd.txt")))) {
+            int i;
+            while ((i = is.read()) != -1) {
+                os.write(i);
+            }
+        }
     }
 }
